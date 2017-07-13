@@ -102,5 +102,6 @@ const config = {
 **Why?** In a multi-page application, the server is going to fetch a new HTML document for you. The page reloads this new document and assets are redownloaded. However, this gives us the unique opportunity to do multiple things:
 
 - Use `CommonsChunkPlugin` to create bundles of shared application code between each page. Multi-page applications that reuse a lot of code/modules between entry points can greatly benefit from these techniques, as the amount of entry points increase.
+- Multiple entry points require multiple bundle outputs; consider changing `output.filename` to something like `[name].js`, which will include the entry point name in each output file's name
 
 T> As a rule of thumb: for each HTML document use exactly one entry point.
